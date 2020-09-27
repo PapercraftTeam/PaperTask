@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundGeneral">
+
+    <com.google.android.material.appbar.AppBarLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/left"
+        android:layout_marginTop="@dimen/top"
+        android:layout_marginBottom="@dimen/bottom">
+
+        <com.grieferpig.papertask.AutoScrollTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hi"
+            android:textColor="@color/textColor"
+            android:textColorHighlight="#FFFFFF"
+            android:textSize="@dimen/text_title"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap" />
+
+        <com.grieferpig.papertask.AutoScrollTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="@dimen/NO_TRANSLATE_ITEM_SUBTITLE_TEXT_ALPHA"
+            android:text="@string/next_step"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_context"
+            app:layout_scrollFlags="snapMargins|scroll|enterAlways|enterAlwaysCollapsed|snap" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:layout_marginTop="@dimen/top"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+        <com.grieferpig.papertask.ImmutableHeightListView
+            android:id="@+id/TaskItemList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:background="#8BC34A"
+        android:backgroundTint="#8BC34A"
+        android:onClick="onAddItemClick"
+        android:src="@android:drawable/ic_menu_add"
+        app:backgroundTint="#8BC34A" />"
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
